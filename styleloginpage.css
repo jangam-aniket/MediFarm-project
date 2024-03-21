@@ -1,0 +1,19 @@
+body {
+  background-image: url("medifarmbg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#contain {
+  height: 250px;
+  width: 400px;
+  margin-top: 15%;
+  margin-left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid rgb(221, 57, 79);
+  border-radius: 5px;
+}
+
+#input-form {
+  padding: 5px;
+  margin-top: 5px;
+}
