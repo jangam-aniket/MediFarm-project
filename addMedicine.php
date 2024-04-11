@@ -1,4 +1,10 @@
 <?php
+// Prevent caching
+header("Cache-Control: no-cache, must-revalidate");
+header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
+?>
+
+<?php
 
 use LDAP\Result;
 
@@ -10,6 +16,9 @@ session_start();
 <html lang="en">
 
 <head>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>MediFarm- Admin</title>
@@ -78,8 +87,12 @@ session_start();
 
         if($result)
         {
-            echo"Successfully added record!";
-            header("location:welcome.php");
+            // echo"Successfully added record!";
+            echo '<div class="alert alert-success" role="alert">
+            Successfully Added record!
+            </div>';
+            $timer=2;
+            header("Refresh:$timer; url=welcome.php");
         }
         else
         {
